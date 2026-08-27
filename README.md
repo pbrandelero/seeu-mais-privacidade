@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 24 de agosto de 2026 · versão 1.0.0*
+*Última atualização: 26 de agosto de 2026 · versão 1.3.0*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -41,7 +41,12 @@ Três coisas acontecem sem você pedir, e todas dentro dos sistemas oficiais:
   SEEU —, ela **carrega uma cópia da mesma página do processo fora da tela** e
   lê de lá, para não mexer na tela em que você está trabalhando;
 - ao usar os atalhos do BNMP ou do SIPE, ela **abre uma janela auxiliar** com a
-  consulta já preenchida.
+  consulta já preenchida;
+- dentro dessa janela do SIPE — e só dentro dela —, ela aciona o botão
+  **Compartilhar localização**, que o SIPE passou a exigir antes de deixar
+  consultar. A extensão **não responde** ao pedido de permissão do navegador:
+  esse é seu, e é ele que decide se a sua localização é compartilhada. Abrindo
+  o SIPE numa aba comum, ela não toca nesse botão.
 
 Nenhuma dessas ações altera dado nos sistemas. Ações que alteram — juntar a
 situação carcerária, desativar um lembrete — só acontecem quando você pede, e a
@@ -63,11 +68,11 @@ máquina:
 | Posição e tamanho das janelas auxiliares | Reabrir onde você deixou |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
 
-Há ainda quatro registros temporários gravados na própria aba
+Há ainda seis registros temporários gravados na própria aba
 (`sessionStorage`), que existem só para um fluxo atravessar um recarregamento
 de página: o processo a reler, o lembrete em desativação, a juntada em
-andamento e a ficha do BNMP a abrir depois do login. Todos somem quando a aba
-é fechada.
+andamento, a ficha do BNMP a abrir depois do login, a ação de movimentação
+pedida e o incidente a cadastrar. Todos somem quando a aba é fechada.
 
 **Nada disso sai da máquina.** A sincronização de contas do Chrome não é usada
 nesta versão.
