@@ -71,6 +71,7 @@ máquina:
 | Preferências: quais recursos ficam ligados | Lembrar a sua configuração |
 | Regime, data-base, livramento condicional e previsão de prescrição já lidos, por processo | Mostrar na capa sem repetir a consulta a cada abertura |
 | CPF, RJI e data de nascimento já vistos, por processo | Evitar nova visita à ficha da parte |
+| Resultado da última leitura da ficha da parte, por processo — quando foi e o que aconteceu (lida, demorou, não abriu) | Não repetir cedo demais uma leitura que falhou, e explicar a falha; não contém dado da parte |
 | Identificador interno da pessoa no BNMP | Abrir a ficha direto, sem passar pela busca |
 | Local de prisão lido no SIPE, com a data da leitura | Mostrar na capa sem consultar de novo |
 | Consulta pendente ao BNMP (processo, CPF ou RJI) | Levar a busca até a janela do BNMP; apagada assim que usada |
