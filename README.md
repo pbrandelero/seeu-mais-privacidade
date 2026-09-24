@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 21 de setembro de 2026 · versão 1.5.0*
+*Última atualização: 22 de setembro de 2026 · versão 1.5.1*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -123,7 +123,8 @@ com todas as letras.
   campo nenhum e sem salvar;
 - **alterar um evento ou incidente**: nas abas Eventos, Incidentes Concedidos,
   Não-Concedidos e Pendentes, abre o item **já no formulário de alteração** —
-  do mesmo jeito, sem preencher nem salvar;
+  do mesmo jeito, sem preencher nem salvar. Depois que **você** salva, ela
+  aperta o "Voltar" da tela seguinte, que é navegação e não altera nada;
 - **remover um evento ou incidente**: nas mesmas abas, a lixeira ao lado do
   item abre o item e aperta Remover. **Quem decide é você**: o próprio SEEU
   pergunta se você confirma a remoção, e é a única pergunta — a extensão não
@@ -186,7 +187,7 @@ Quando uma nova leitura mostra que uma informação deixou de existir no sistema
 — uma previsão de prescrição apagada, por exemplo —, o que estava guardado é
 substituído, e a capa deixa de mostrá-la.
 
-Há ainda **vinte e oito registros temporários** gravados na própria aba
+Há ainda **vinte e nove registros temporários** gravados na própria aba
 (`sessionStorage`). Todos existem pela mesma razão: clicar numa aba do SEEU
 recarrega a página, e o que um caminho precisa lembrar do outro lado desse
 recarregamento não pode ficar na memória, que a recarga destrói. Todos somem
@@ -196,7 +197,7 @@ quando a aba do navegador é fechada.
 o clique em "Assinar" dentro da janela dela; a ação de movimentação pedida; o
 incidente a cadastrar; a dispensa de arquivo a fazer do outro lado da
 redistribuição; o cadastro — de processo criminal, evento ou incidente — a
-abrir em alteração; as juntadas a marcar para dispensa, a identificação
+abrir em alteração, e se ele já foi salvo — para o "Voltar" da tela seguinte; as juntadas a marcar para dispensa, a identificação
 interna das que foram marcadas, o endereço do processo para voltar a ele, em
 que passo isso está e a aba para onde voltar depois; a Defensoria a habilitar, quando o
 último advogado sai; o atalho de advogados ou de
