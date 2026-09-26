@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 22 de setembro de 2026 · versão 1.5.1*
+*Última atualização: 26 de setembro de 2026 · versão 1.5.2*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -50,10 +50,13 @@ Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
 - para ler o regime, as data-base, o livramento condicional e a previsão de
   prescrição — que só existem atrás da aba Informações Adicionais —, ela
   **carrega uma cópia da mesma página do processo fora da tela** e lê de lá,
-  para não mexer na tela em que você está trabalhando. Essa leitura é refeita
-  sempre que algo pode ter mudado — ao sair de qualquer aba do processo e
-  voltar à capa, e quando uma janela do SEEU se fecha sobre ela —, para o
-  valor mostrado ser o de agora e não o de antes da sua alteração. Se
+  para não mexer na tela em que você está trabalhando. Essa leitura é feita
+  ao abrir o processo e refeita sempre que algo pode ter mudado — depois de
+  um clique que grava (Salvar, Confirmar, Assinar, Finalizar e semelhantes),
+  em qualquer tela ou janela do SEEU nesta aba, e a cada 30 minutos, para
+  pegar alterações feitas por outra pessoa —, para o valor mostrado ser o de
+  agora e não o de antes da sua alteração. A cópia só é aberta depois de a
+  sua página terminar de carregar, e dentro dela a extensão não roda. Se
   essa cópia abrir sem o processo — acontece em bases em que o servidor não o
   reconstrói sozinho —, ela **pede a aba de novo informando o número dos
   autos**, que é a mesma coisa que o SEEU faz quando você clica numa aba;
@@ -65,6 +68,15 @@ Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
   é ele que permite abrir a tela numa janela sobre a capa, sem tirar você do
   lugar em que estava. Não dando certo essa leitura, ela **vai à aba Partes**
   de verdade e abre a janela de lá, dizendo na tela por que trocou de aba;
+- pela mesma regra (ao abrir o processo, depois de um clique que grava e a
+  cada 30 minutos), **abre fora da tela a aba Informações Gerais** — de
+  preferência na mesma cópia que lê o regime — para ler o juiz da execução e
+  mostrá-lo ao lado do Juízo. Um nome de leitura vencida por essa regra não
+  aparece;
+- pela mesma regra, **abre fora da tela a aba Outros Processos do
+  Apenado** para contar quantos deles são de Execução da Pena, e realçar a
+  aba quando houver algum. Só a contagem é guardada — nem número nem parte
+  dos outros processos;
 - na aba Processos Criminais, **abre fora da tela a página de cada processo
   criminal**, pelo link que a própria árvore traz, para ler se a guia é
   provisória ou definitiva. Uma vez por processo criminal; a provisória é
@@ -176,24 +188,27 @@ máquina:
 | CPF, RJI e data de nascimento já vistos, por processo | Evitar nova visita à ficha da parte |
 | Resultado da última leitura da ficha da parte, por processo — quando foi e o que aconteceu (lida, demorou, não abriu) | Não repetir cedo demais uma leitura que falhou, e explicar a falha; não contém dado da parte |
 | Número de cada processo criminal e se a guia é provisória ou definitiva, com a data da leitura | Mostrar na aba Processos Criminais sem abrir a página de cada processo a cada vez |
+| Quantos outros processos de Execução da Pena o apenado tem, por processo, com a data da leitura | Realçar a aba Outros Processos do Apenado sem abri-la a cada visita |
+| Nome do juiz da execução, por processo, com a data da leitura | Mostrá-lo ao lado do Juízo em todas as abas do processo — ele só aparece na aba Informações Gerais |
 | Identificador interno da pessoa no BNMP | Abrir a ficha direto, sem passar pela busca |
 | Local de prisão lido no SIPE, com a data da leitura | Mostrar na capa sem consultar de novo |
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
 | Os seis últimos passos da busca da ficha no BNMP — hora, tela e o que aconteceu (filtrou, achou a pessoa, abriu a ficha, conferiu) | A janela do BNMP não tem o ícone da extensão; é assim que o Diagnóstico, tirado no SEEU, sabe onde a busca parou. Não contém CPF, nome nem outro dado da pessoa |
 | Posição e tamanho das janelas auxiliares | Reabrir onde você deixou |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
+| Quais gavetas da tela do ícone você deixou abertas | Reabri-las do mesmo jeito; não é dado de processo |
 
 Quando uma nova leitura mostra que uma informação deixou de existir no sistema
 — uma previsão de prescrição apagada, por exemplo —, o que estava guardado é
 substituído, e a capa deixa de mostrá-la.
 
-Há ainda **vinte e nove registros temporários** gravados na própria aba
+Há ainda **trinta e cinco registros temporários** gravados na própria aba
 (`sessionStorage`). Todos existem pela mesma razão: clicar numa aba do SEEU
 recarrega a página, e o que um caminho precisa lembrar do outro lado desse
 recarregamento não pode ficar na memória, que a recarga destrói. Todos somem
 quando a aba do navegador é fechada.
 
-**O que está em curso** — o processo a reler, ou a dispensa de relê-lo logo depois de uma janela de advogados ou da Defensoria, que não mexem no sumário; a juntada do RESPE em andamento e
+**O que está em curso** — a juntada do RESPE em andamento e
 o clique em "Assinar" dentro da janela dela; a ação de movimentação pedida; o
 incidente a cadastrar; a dispensa de arquivo a fazer do outro lado da
 redistribuição; o cadastro — de processo criminal, evento ou incidente — a
@@ -201,10 +216,17 @@ abrir em alteração, e se ele já foi salvo — para o "Voltar" da tela seguint
 interna das que foram marcadas, o endereço do processo para voltar a ele, em
 que passo isso está e a aba para onde voltar depois; a Defensoria a habilitar, quando o
 último advogado sai; o atalho de advogados ou de
-Defensoria pedido; a escolha de advogado anotada; o lembrete em desativação; e
-a ficha do BNMP a abrir depois do login.
+Defensoria pedido; a escolha de advogado anotada; o lembrete em desativação;
+a ficha do BNMP a abrir depois do login; e o cadastro de CPF a abrir na Parte do
+Processo, com a aba de onde se saiu e se o CPF já foi confirmado — para voltar
+aos autos depois.
 
-**Onde você estava** — o nome da última aba do processo que você abriu
+**Onde você estava** — os processos cujas informações já foram mostradas
+nesta visita (para não escondê-las de novo a cada troca de aba); o número do
+processo aberto nesta aba e desde quando, e a hora do último clique que
+gravou algo (sem o que foi gravado) — é o que diz se o que se leu em segundo
+plano ainda vale; o nome da
+última aba do processo que você abriu
 (`Movimentações`, `Partes`), a aba de onde um atalho saiu, e se a janela que
 ele abriu chegou a ficar na tela. São três nomes de aba e um sim/não: é o que
 permite devolver você ao lugar em que estava quando a janela fecha.
@@ -213,11 +235,13 @@ permite devolver você ao lugar em que estava quando a janela fecha.
 janela de advogados e, por isso, se é preciso conferir ao fechá-la se o
 processo ficou sem ninguém habilitado; os números dos
 processos criminais cuja página foi aberta, para reler se a guia é provisória
-ou definitiva ao voltar à árvore; uma explicação a mostrar na primeira tela
+ou definitiva ao voltar à árvore; quantas vezes seguidas a leitura do regime falhou neste processo, para espaçar as tentativas; uma explicação a mostrar na primeira tela
 depois de uma navegação; duas marcas de que um aviso técnico já saiu no
 console nesta sessão; o maior tamanho de página que a lista de peças do BNMP
-oferece; e duas linhas para o Diagnóstico — em que passo parou a última
-dispensa de juntadas e quanto a tela da redistribuição rolou. As seis últimas
+oferece; e quatro linhas para o Diagnóstico — em que passo parou a última
+dispensa de juntadas, quanto a tela da redistribuição rolou, o que a volta
+depois de salvar um incidente decidiu, e os passos do atalho de advogados e
+da conferência da Defensoria. As oito últimas
 não guardam dado de processo nenhum.
 
 **Nada disso sai da máquina.** A sincronização de contas do Chrome não é usada
