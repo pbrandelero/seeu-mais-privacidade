@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 26 de setembro de 2026 · versão 1.5.2*
+*Última atualização: 28 de setembro de 2026 · versão 1.5.3*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -153,7 +153,8 @@ com todas as letras.
   única vez em que ela mesma habilita é depois de você remover o último
   advogado — é a segunda exceção, logo abaixo.
 
-**As exceções são duas, e as duas habilitam representação.**
+**As exceções são três: duas habilitam representação, e a terceira troca o
+assunto principal.**
 
 A primeira é a **habilitação de advogado**. Depois que VOCÊ escolhe o advogado
 na tela "Seleção de Advogado", a extensão marca a caixa do executado e
@@ -172,6 +173,18 @@ mesmo: **se desfazem na mesma tela**, desmarcando e salvando. E as duas
 acontecem na tela, à vista — nada é gravado em segundo plano. Cada uma pode
 ser desligada sozinha no ícone da extensão; desligada, a tela fica pronta e
 a decisão fica com você.
+
+A terceira é a **troca do assunto principal**. Ao lado do assunto, o botão
+"trocar" mostra os quatro assuntos da execução penal (pena privativa de
+liberdade, pena restritiva de direitos, medidas de segurança e suspensão
+condicional da pena). Quando VOCÊ escolhe um, a extensão abre a Alteração do
+Processo **numa cópia fora da tela**, põe o assunto escolhido nos campos do
+assunto e envia o formulário do próprio SEEU, com todos os demais campos
+exatamente como o servidor os mandou. **É a única gravação que ela faz fora
+da tela** — e por isso confere a resposta do SEEU antes de mudar a capa: se o
+assunto dos autos não for o escolhido, ela avisa e não muda nada. Desfaz-se
+do mesmo jeito, escolhendo o assunto anterior. O recurso pode ser desligado
+no ícone da extensão.
 
 Desativar um lembrete também altera, e continua acontecendo só quando você
 aperta o botão.
@@ -202,7 +215,7 @@ Quando uma nova leitura mostra que uma informação deixou de existir no sistema
 — uma previsão de prescrição apagada, por exemplo —, o que estava guardado é
 substituído, e a capa deixa de mostrá-la.
 
-Há ainda **trinta e cinco registros temporários** gravados na própria aba
+Há ainda **trinta e nove registros temporários** gravados na própria aba
 (`sessionStorage`). Todos existem pela mesma razão: clicar numa aba do SEEU
 recarrega a página, e o que um caminho precisa lembrar do outro lado desse
 recarregamento não pode ficar na memória, que a recarga destrói. Todos somem
@@ -223,9 +236,11 @@ aos autos depois.
 
 **Onde você estava** — os processos cujas informações já foram mostradas
 nesta visita (para não escondê-las de novo a cada troca de aba); o número do
-processo aberto nesta aba e desde quando, e a hora do último clique que
-gravou algo (sem o que foi gravado) — é o que diz se o que se leu em segundo
-plano ainda vale; o nome da
+processo aberto nesta aba e desde quando, a hora do último clique que
+gravou algo e a do último que pode ter mudado o juiz (sem o que foi gravado)
+— é o que diz se o que se leu em segundo plano ainda vale; o endereço da tela
+de Alteração do Processo, visto em Informações Gerais, para o botão de trocar
+o assunto funcionar nas outras abas do mesmo processo; o nome da
 última aba do processo que você abriu
 (`Movimentações`, `Partes`), a aba de onde um atalho saiu, e se a janela que
 ele abriu chegou a ficar na tela. São três nomes de aba e um sim/não: é o que
@@ -235,7 +250,7 @@ permite devolver você ao lugar em que estava quando a janela fecha.
 janela de advogados e, por isso, se é preciso conferir ao fechá-la se o
 processo ficou sem ninguém habilitado; os números dos
 processos criminais cuja página foi aberta, para reler se a guia é provisória
-ou definitiva ao voltar à árvore; quantas vezes seguidas a leitura do regime falhou neste processo, para espaçar as tentativas; uma explicação a mostrar na primeira tela
+ou definitiva ao voltar à árvore; quantas vezes seguidas a leitura do regime falhou neste processo, para espaçar as tentativas; se falta a leitura de conferência que se faz logo depois de uma gravação, porque o SEEU recalcula os prazos um pouco depois de gravar; se a cópia dos autos veio sem abas nesta sessão, para as leituras irem direto pelo caminho que funciona; uma explicação a mostrar na primeira tela
 depois de uma navegação; duas marcas de que um aviso técnico já saiu no
 console nesta sessão; o maior tamanho de página que a lista de peças do BNMP
 oferece; e quatro linhas para o Diagnóstico — em que passo parou a última
