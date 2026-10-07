@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 28 de setembro de 2026 · versão 1.5.3*
+*Última atualização: 6 de outubro de 2026 · versão 1.5.4*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -29,17 +29,21 @@ Na ficha de uma pessoa no BNMP, ela lê também o CPF exibido ali, para conferir
 se a ficha aberta é mesmo a da parte daquele processo — ver "o que ela faz por
 conta própria".
 
-Ela só age em seis endereços — `seeu.pje.jus.br`, `seeutreino.pje.jus.br` e
-`seeuintegra.pje.jus.br` (as três bases do SEEU: produção, treino e testes),
+Ela só age em sete endereços — `seeu.pje.jus.br`, `seeutreino.pje.jus.br`,
+`seeuintegra.pje.jus.br` e `seeuimplantacao.pje.jus.br` (as quatro bases do
+SEEU: produção, treino, testes e implantação),
 `bnmp.pdpj.jus.br`, `sipe.sejus.ro.gov.br` e `sipe.treinamento.ro.gov.br`. Em
 qualquer outra página, o código não é sequer carregado.
 
 **Ela não tem acesso ao seu histórico de navegação, aos seus favoritos nem ao
-conteúdo de outras abas.** As duas únicas permissões que ela pede são
-`storage`, para guardar as suas preferências e as leituras já feitas, e
-`scripting`, para reinjetar os próprios scripts em abas já abertas depois de
-uma atualização e para acionar, na página do SEEU, funções que a própria
-página define — as mesmas que os links dela acionam.
+conteúdo de outras abas.** As permissões que ela pede são três: `storage`,
+para guardar as suas preferências e as leituras já feitas; `scripting`, para
+reinjetar os próprios scripts em abas já abertas depois de uma atualização e
+para acionar, na página do SEEU, funções que a própria página define — as
+mesmas que os links dela acionam; e `system.display`, para saber quantos
+monitores há e onde fica cada um, e assim abrir a janela do "Navegar" dos
+autos no outro monitor. Ela lê só a posição e o tamanho dos monitores — nada
+do que está na tela deles.
 
 ## O que ela faz por conta própria
 
@@ -153,8 +157,9 @@ com todas as letras.
   única vez em que ela mesma habilita é depois de você remover o último
   advogado — é a segunda exceção, logo abaixo.
 
-**As exceções são três: duas habilitam representação, e a terceira troca o
-assunto principal.**
+**As exceções são cinco: duas habilitam representação, a terceira troca o
+assunto principal, a quarta salva o processo sem mudar nada e a quinta leva
+um documento até a assinatura.**
 
 A primeira é a **habilitação de advogado**. Depois que VOCÊ escolhe o advogado
 na tela "Seleção de Advogado", a extensão marca a caixa do executado e
@@ -186,6 +191,30 @@ assunto dos autos não for o escolhido, ela avisa e não muda nada. Desfaz-se
 do mesmo jeito, escolhendo o assunto anterior. O recurso pode ser desligado
 no ícone da extensão.
 
+A quarta é o botão **Recarregar**, na barra dos autos. Quando VOCÊ o aperta,
+a extensão faz, numa cópia fora da tela, o "Alterar" e o "Salvar" de
+Informações Gerais **sem mudar campo nenhum** — é o que se faz à mão para
+o SEEU refazer o cálculo dos requisitos temporais e da prescrição. O
+formulário vai como o servidor o mandou, e a resposta do SEEU é conferida;
+recusada, ela avisa. Depois a tela é recarregada.
+
+A quinta é o botão **Salvar e assinar**, ao lado do "Continuar" do editor
+de textos do SEEU — na juntada de documento, na expedição e na minuta.
+Quando VOCÊ o aperta, a extensão faz o caminho que se faria à mão, na tela e
+à vista: "Continuar", "Salvar" na prévia do documento, "Concluir" (quando a
+tela o tem) e "Assinar". **Ela não para na prévia** — o aviso do próprio
+botão, ao passar o mouse, diz isso. E **a assinatura não se completa sem
+você**: o "Assinar" do SEEU abre a janela "Confirme seu código", com o
+código que o SEEU envia ao seu e-mail, e quem o digita é você — cancelando
+ali, nada é assinado. Se o SEEU recusar qualquer passo (um campo
+obrigatório em branco, por exemplo), ela para e repete a mensagem dele. Na
+juntada sem o Tipo Movimento escolhido, ela para antes do "Assinar". Na
+minuta, o botão se chama **Salvar e concluir** e o caminho termina no
+"Concluir" — quem assina é o magistrado, e ali ela nunca aperta "Assinar".
+Para saber se o editor veio de uma minuta, ela anota, no clique em "Digitar
+Texto", só isso: minuta ou não. O recurso pode ser desligado no ícone da
+extensão.
+
 Desativar um lembrete também altera, e continua acontecendo só quando você
 aperta o botão.
 
@@ -215,7 +244,7 @@ Quando uma nova leitura mostra que uma informação deixou de existir no sistema
 — uma previsão de prescrição apagada, por exemplo —, o que estava guardado é
 substituído, e a capa deixa de mostrá-la.
 
-Há ainda **trinta e nove registros temporários** gravados na própria aba
+Há ainda **quarenta e um registros temporários** gravados na própria aba
 (`sessionStorage`). Todos existem pela mesma razão: clicar numa aba do SEEU
 recarrega a página, e o que um caminho precisa lembrar do outro lado desse
 recarregamento não pode ficar na memória, que a recarga destrói. Todos somem
@@ -230,7 +259,7 @@ interna das que foram marcadas, o endereço do processo para voltar a ele, em
 que passo isso está e a aba para onde voltar depois; a Defensoria a habilitar, quando o
 último advogado sai; o atalho de advogados ou de
 Defensoria pedido; a escolha de advogado anotada; o lembrete em desativação;
-a ficha do BNMP a abrir depois do login; e o cadastro de CPF a abrir na Parte do
+a ficha do BNMP a abrir depois do login; o passo do "Salvar e assinar" em curso — só o nome do passo e a hora, sem o texto do documento — e se o editor veio de uma minuta; e o cadastro de CPF a abrir na Parte do
 Processo, com a aba de onde se saiu e se o CPF já foi confirmado — para voltar
 aos autos depois.
 
