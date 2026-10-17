@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 14 de outubro de 2026 · versão 1.5.5*
+*Última atualização: 17 de outubro de 2026 · versão 1.5.6*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -50,7 +50,17 @@ monitores — nada do que está na tela deles.
 Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
 
 - ao abrir a capa de um processo, ela **consulta o status no BNMP**, que é o
-  mesmo clique que você daria;
+  mesmo clique que você daria. Se essa consulta abrir outra página — o que
+  acontece com quem não tem acesso ao BNMP —, a consulta automática **para
+  por 8 horas**, e volta assim que um status aparecer; o ícone, clicado
+  por você, continua funcionando;
+- ela **lê no cabeçalho do SEEU o tipo de perfil e a atribuição** em uso —
+  se é de advogado ou da Defensoria, e se a atribuição é de vara (analista,
+  técnico, juiz…). A consulta automática ao BNMP só acontece nas
+  atribuições de vara, ou numa que já trouxe o status por um clique seu. Nesses perfis, os recursos que agem como
+  cartório ou consultam sistemas externos sozinhos **não ligam** — eles
+  foram feitos para o perfil de vara. Nada do cabeçalho é guardado além
+  dessa palavra ("advogado" ou "defensoria"), e só na própria aba;
 - para ler o regime, as data-base, o livramento condicional e a previsão de
   prescrição — que só existem atrás da aba Informações Adicionais —, ela
   **carrega uma cópia da mesma página do processo fora da tela** e lê de lá,
@@ -117,7 +127,7 @@ Nenhuma dessas ações altera dado nos sistemas.
 
 ## O que ela altera, e só quando você pede
 
-Oito caminhos da extensão terminam em tela de alteração. Todos começam num
+Nove caminhos da extensão terminam em tela de alteração. Todos começam num
 clique seu, e todos param antes da decisão — com duas exceções, ditas abaixo
 com todas as letras.
 
@@ -159,14 +169,21 @@ com todas as letras.
   não responde a essa pergunta. Confirmada — o que ela confere vendo a tela
   recarregar sem as juntadas marcadas —, ela abre o processo e volta à aba em
   que você estava; recusada, nada muda;
+- **dispensar a análise de decurso de prazo**: abre a lista de Decursos de
+  Prazo do SEEU, filtra por este processo e **marca só as intimações dele** —
+  cada linha é conferida pelo número do processo. Ela aperta "Dispensar em
+  Lote", e **é o próprio SEEU que pergunta** se você confirma — a extensão
+  não responde a essa pergunta. Confirmada, ela volta aos autos, na aba em
+  que você estava; recusada, nada muda;
 - **habilitar ou desabilitar a Defensoria**: pelo atalho da capa, leva você
   até a tela do SEEU que pergunta, e para ali. Quem marca e salva é você. A
   única vez em que ela mesma habilita é depois de você remover o último
   advogado — é a segunda exceção, logo abaixo.
 
-**As exceções são seis: duas habilitam representação, a terceira troca o
+**As exceções são sete: duas habilitam representação, a terceira troca o
 assunto principal, a quarta salva o processo sem mudar nada, a quinta leva
-um documento até a assinatura e a sexta finaliza a conclusão retornada.**
+um documento até a assinatura, a sexta finaliza a conclusão retornada e a
+sétima cria ou adia um lembrete.**
 
 A primeira é a **habilitação de advogado**. Depois que VOCÊ escolhe o advogado
 na tela "Seleção de Advogado", a extensão marca a caixa do executado e
@@ -192,8 +209,8 @@ liberdade, pena restritiva de direitos, medidas de segurança e suspensão
 condicional da pena). Quando VOCÊ escolhe um, a extensão abre a Alteração do
 Processo **numa cópia fora da tela**, põe o assunto escolhido nos campos do
 assunto e envia o formulário do próprio SEEU, com todos os demais campos
-exatamente como o servidor os mandou. **É a única gravação que ela faz fora
-da tela** — e por isso confere a resposta do SEEU antes de mudar a capa: se o
+exatamente como o servidor os mandou. **É gravação feita fora da tela** — e
+por isso confere a resposta do SEEU antes de mudar a capa: se o
 assunto dos autos não for o escolhido, ela avisa e não muda nada. Desfaz-se
 do mesmo jeito, escolhendo o assunto anterior. O recurso pode ser desligado
 no ícone da extensão.
@@ -232,6 +249,27 @@ confere ainda que a tela aberta é a do mesmo processo; não sendo, não aperta
 nada. O recurso
 pode ser desligado no ícone da extensão.
 
+A sétima é o **banco de lembretes**. O "Novo Lembrete" dos autos abre, por
+cima deles, os modelos de lembrete que VOCÊ cadastrou ou importou — ou, com
+a extensão AZflow instalada e cuidando desse botão, um botão próprio, "Banco
+de lembretes", ao lado dele. Quando
+você clica num modelo, a extensão abre a tela do Novo Lembrete do SEEU
+**numa cópia fora da tela**, preenche a data de ativação, o assunto e o
+texto do modelo — com o número de processo e a sequência da movimentação
+que você preencheu, quando o modelo os pede — e aperta o Salvar
+daquela tela. Antes, confere que a tela é deste processo; depois, confere a
+resposta do SEEU e, recusada, avisa. Criado, a tela é recarregada e o
+lembrete aparece no quadro, de onde se desativa como qualquer outro. O texto
+do modelo entra como texto, nunca como marcação. "Lembrete em branco" leva à
+tela do SEEU, como sem a extensão, e o recurso pode ser desligado no ícone.
+
+Na mesma exceção, o **adiar lembrete**: ao lado de cada lembrete da capa, o
+calendário. Quando VOCÊ escolhe a data e aperta Adiar, a extensão abre o
+lembrete **numa cópia fora da tela**, aperta Alterar, troca só a data de
+ativação e aperta Salvar — assunto e texto vão como o SEEU os mandou. Antes,
+confere que o lembrete é deste processo; depois, que o SEEU gravou a data
+escolhida, e só então recarrega a tela.
+
 O menu **Ordenar Cumprimentos**, na barra dos autos, não é exceção: ele
 abre o Ordenar Cumprimentos do SEEU com o tipo que você escolheu já no
 seletor e "Necessita Retorno" marcado "Não" — só quando nenhuma das duas
@@ -261,7 +299,11 @@ máquina:
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
 | Os seis últimos passos da busca da ficha no BNMP — hora, tela e o que aconteceu (filtrou, achou a pessoa, abriu a ficha, conferiu) | A janela do BNMP não tem o ícone da extensão; é assim que o Diagnóstico, tirado no SEEU, sabe onde a busca parou. Não contém CPF, nome nem outro dado da pessoa |
 | Posição e tamanho das janelas auxiliares | Reabrir onde você deixou |
-| Monitor escolhido para o Navegar e os PDFs — na pergunta do primeiro clique ou no ícone (ou "automático", ou "nenhum") | Abrir sempre no mesmo lugar, sem perguntar de novo |
+| Onde abrem o Navegar e os PDFs — como o SEEU faz, numa aba nova, num dos monitores ou o automático —, escolhido na pergunta do primeiro clique ou no ícone | Abrir sempre do mesmo jeito, sem perguntar de novo |
+| Se a consulta automática do Status BNMP está parada, e desde quando | Não insistir numa consulta que abre a página do BNMP |
+| As atribuições (fora as de vara) em que um clique seu trouxe o status do BNMP — só o nome da atribuição, como "distribuidor" | Passar a consultar sozinha nelas |
+| Os modelos do banco de lembretes que você cria ou importa — assunto, texto e em quantos dias o lembrete ativa | Criar lembretes num clique. Saem desta máquina só no arquivo que você mesmo exportar, para levar a outro computador ou compartilhar |
+| As preferências que você memoriza nos formulários do SEEU — por tela, com o nome que você der, só as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento), nunca texto livre | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
 | Quais gavetas da tela do ícone você deixou abertas | Reabri-las do mesmo jeito; não é dado de processo |
 
@@ -269,7 +311,7 @@ Quando uma nova leitura mostra que uma informação deixou de existir no sistema
 — uma previsão de prescrição apagada, por exemplo —, o que estava guardado é
 substituído, e a capa deixa de mostrá-la.
 
-Há ainda **quarenta e cinco registros temporários** gravados na própria aba
+Há ainda **quarenta e seis registros temporários** gravados na própria aba
 (`sessionStorage`). Todos existem pela mesma razão: clicar numa aba do SEEU
 recarrega a página, e o que um caminho precisa lembrar do outro lado desse
 recarregamento não pode ficar na memória, que a recarga destrói. Todos somem
@@ -284,7 +326,7 @@ interna das que foram marcadas, o endereço do processo para voltar a ele, em
 que passo isso está e a aba para onde voltar depois; a Defensoria a habilitar, quando o
 último advogado sai; o atalho de advogados ou de
 Defensoria pedido; a escolha de advogado anotada; o lembrete em desativação;
-a ficha do BNMP a abrir depois do login; o cumprimento para expedir que se pediu para analisar ou remover — número do processo, o nome do item na capa, em que passo está e o endereço dos autos para voltar; o tipo de cumprimento escolhido no menu Ordenar Cumprimentos, até a janela abrir; o passo do "Finalizar Conclusão" em curso, com o número do processo e o endereço dos autos para voltar; o nome do sentenciado e o da mãe, lidos da capa, para a Pesquisa de Sentenciado do botão "Pesquisar processos" — apagados assim que a janela da pesquisa os usa, ou em um minuto; o passo do "Salvar e assinar" em curso — só o nome do passo e a hora, sem o texto do documento — e se o editor veio de uma minuta; e o cadastro de CPF a abrir na Parte do
+a ficha do BNMP a abrir depois do login; o tipo de perfil reconhecido no cabeçalho, quando é de advogado ou da Defensoria; o cumprimento para expedir que se pediu para analisar ou remover — número do processo, o nome do item na capa, em que passo está e o endereço dos autos para voltar; o tipo de cumprimento escolhido no menu Ordenar Cumprimentos, até a janela abrir; o passo do "Finalizar Conclusão" em curso, com o número do processo e o endereço dos autos para voltar; o nome do sentenciado e o da mãe, lidos da capa, para a Pesquisa de Sentenciado do botão "Pesquisar processos" — apagados assim que a janela da pesquisa os usa, ou em um minuto; o passo do "Salvar e assinar" em curso — só o nome do passo e a hora, sem o texto do documento — e se o editor veio de uma minuta; e o cadastro de CPF a abrir na Parte do
 Processo, com a aba de onde se saiu e se o CPF já foi confirmado — para voltar
 aos autos depois.
 
@@ -312,6 +354,13 @@ dispensa de juntadas, quanto a tela da redistribuição rolou, o que a volta
 depois de salvar um incidente decidiu, e os passos do atalho de advogados e
 da conferência da Defensoria. As oito últimas
 não guardam dado de processo nenhum.
+
+**Cópia de segurança.** Pelo ícone, "Exportar e importar…" abre uma página da
+própria extensão que baixa um arquivo com o que você marcar — as chaves dos
+recursos, a escolha de monitor, o banco de lembretes, as preferências
+memorizadas nas telas — e importa esse arquivo de volta, mostrando antes o
+que ele traz e gravando só as partes que você marcar. **Nenhum dado de processo vai no arquivo**, e ele só sai desta máquina
+se você o levar.
 
 **Nada disso sai da máquina.** A sincronização de contas do Chrome não é usada
 nesta versão.
