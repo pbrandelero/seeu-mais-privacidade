@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 17 de outubro de 2026 · versão 1.5.6*
+*Última atualização: 19 de outubro de 2026 · versão 1.5.7*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -264,11 +264,12 @@ do modelo entra como texto, nunca como marcação. "Lembrete em branco" leva à
 tela do SEEU, como sem a extensão, e o recurso pode ser desligado no ícone.
 
 Na mesma exceção, o **adiar lembrete**: ao lado de cada lembrete da capa, o
-calendário. Quando VOCÊ escolhe a data e aperta Adiar, a extensão abre o
-lembrete **numa cópia fora da tela**, aperta Alterar, troca só a data de
-ativação e aperta Salvar — assunto e texto vão como o SEEU os mandou. Antes,
-confere que o lembrete é deste processo; depois, que o SEEU gravou a data
-escolhida, e só então recarrega a tela.
+calendário. Quando VOCÊ escolhe a data — e, se quiser, muda o assunto — e
+aperta Salvar, a extensão abre o lembrete **numa cópia fora da tela**, aperta
+Alterar, troca a data de ativação e, se você o mudou, o assunto, e aperta
+Salvar — o texto vai como o SEEU o mandou. Antes, confere pelo campo
+"Processo" da tela que o lembrete é deste processo; depois, que o SEEU gravou
+o que você escolheu, e só então recarrega a tela.
 
 O menu **Ordenar Cumprimentos**, na barra dos autos, não é exceção: ele
 abre o Ordenar Cumprimentos do SEEU com o tipo que você escolheu já no
@@ -295,7 +296,7 @@ máquina:
 | Quantos outros processos de Execução da Pena o apenado tem, por processo, com a data da leitura | Realçar a aba Outros Processos do Apenado sem abri-la a cada visita |
 | Nome do juiz da execução, por processo, com a data da leitura | Mostrá-lo ao lado do Juízo em todas as abas do processo — ele só aparece na aba Informações Gerais |
 | Identificador interno da pessoa no BNMP | Abrir a ficha direto, sem passar pela busca |
-| Local de prisão lido no SIPE, com a data da leitura | Mostrar na capa sem consultar de novo |
+| Local de prisão lido no SIPE, com a data da leitura e como foi identificado (CPF, RJI ou escolha sua, pelo botão "É esta pessoa") | Mostrar na capa sem consultar de novo |
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
 | Os seis últimos passos da busca da ficha no BNMP — hora, tela e o que aconteceu (filtrou, achou a pessoa, abriu a ficha, conferiu) | A janela do BNMP não tem o ícone da extensão; é assim que o Diagnóstico, tirado no SEEU, sabe onde a busca parou. Não contém CPF, nome nem outro dado da pessoa |
 | Posição e tamanho das janelas auxiliares | Reabrir onde você deixou |
@@ -303,7 +304,7 @@ máquina:
 | Se a consulta automática do Status BNMP está parada, e desde quando | Não insistir numa consulta que abre a página do BNMP |
 | As atribuições (fora as de vara) em que um clique seu trouxe o status do BNMP — só o nome da atribuição, como "distribuidor" | Passar a consultar sozinha nelas |
 | Os modelos do banco de lembretes que você cria ou importa — assunto, texto e em quantos dias o lembrete ativa | Criar lembretes num clique. Saem desta máquina só no arquivo que você mesmo exportar, para levar a outro computador ou compartilhar |
-| As preferências que você memoriza nos formulários do SEEU — por tela, com o nome que você der, só as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento), nunca texto livre | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
+| As preferências que você memoriza nos formulários do SEEU — por tela (juntada, dados do cumprimento e da conclusão, audiência, instaurar incidente), com o nome que você der: as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento) e o texto da Descrição do documento; nunca datas nem outro texto livre | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
 | Quais gavetas da tela do ícone você deixou abertas | Reabri-las do mesmo jeito; não é dado de processo |
 
@@ -359,7 +360,8 @@ não guardam dado de processo nenhum.
 própria extensão que baixa um arquivo com o que você marcar — as chaves dos
 recursos, a escolha de monitor, o banco de lembretes, as preferências
 memorizadas nas telas — e importa esse arquivo de volta, mostrando antes o
-que ele traz e gravando só as partes que você marcar. **Nenhum dado de processo vai no arquivo**, e ele só sai desta máquina
+que ele traz e gravando só o que você marcar — parte por parte, ou modelo
+por modelo e preferência por preferência. **Nenhum dado de processo vai no arquivo**, e ele só sai desta máquina
 se você o levar.
 
 **Nada disso sai da máquina.** A sincronização de contas do Chrome não é usada
