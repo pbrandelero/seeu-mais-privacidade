@@ -309,10 +309,11 @@ máquina:
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
 | Os seis últimos passos da busca da ficha no BNMP — hora, tela e o que aconteceu (filtrou, achou a pessoa, abriu a ficha, conferiu) | A janela do BNMP não tem o ícone da extensão; é assim que o Diagnóstico, tirado no SEEU, sabe onde a busca parou. Não contém CPF, nome nem outro dado da pessoa |
 | Posição e tamanho das janelas auxiliares | Reabrir onde você deixou |
+| O número interno (do navegador) da janela do Navegar e da janela dos documentos — em `chrome.storage.session`, que se apaga ao fechar o navegador | Pôr o PDF seguinte numa aba da mesma janela, e manter no mesmo monitor o PDF clicado dentro dela; não é dado de processo |
 | Onde abrem o Navegar e os PDFs — como o SEEU faz, numa aba nova, num dos monitores ou o automático —, escolhido na pergunta do primeiro clique ou no ícone | Abrir sempre do mesmo jeito, sem perguntar de novo |
 | Se a consulta automática do Status BNMP está parada, e desde quando | Não insistir numa consulta que abre a página do BNMP |
 | As atribuições (fora as de vara) em que um clique seu trouxe o status do BNMP — só o nome da atribuição, como "distribuidor" | Passar a consultar sozinha nelas |
-| Os modelos do banco de lembretes que você cria ou importa — assunto, texto e em quantos dias o lembrete ativa | Criar lembretes num clique. Saem desta máquina só no arquivo que você mesmo exportar, para levar a outro computador ou compartilhar |
+| Os modelos do banco de lembretes que você cria ou importa — assunto, texto e em quantos dias o lembrete ativa | Criar lembretes sem sair dos autos (o texto aparece para você conferir antes). Saem desta máquina só no arquivo que você mesmo exportar, para levar a outro computador ou compartilhar |
 | As preferências que você memoriza nos formulários do SEEU — por tela (juntada, dados do cumprimento e da conclusão, audiência, instaurar incidente), com o nome que você der: as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento) e o texto da Descrição do documento; nunca datas nem outro texto livre | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
 | Quais gavetas da tela do ícone você deixou abertas | Reabri-las do mesmo jeito; não é dado de processo |
