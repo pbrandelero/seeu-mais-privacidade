@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 19 de outubro de 2026 · versão 1.5.7*
+*Última atualização: 20 de outubro de 2026 · versão 1.5.8*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -95,6 +95,13 @@ Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
   criminal**, pelo link que a própria árvore traz, para ler se a guia é
   provisória ou definitiva. Uma vez por processo criminal; a provisória é
   relida uma vez por dia, porque vira definitiva com o trânsito em julgado;
+- na aba Processos Criminais, **abre fora da tela a página de cada pena
+  ativa e de cada desmembramento dela**, pelo link da árvore, para ler o
+  campo Observações da pena e as frações do desmembramento (progressão e
+  livramento). Os desmembramentos das demais penas só são lidos quando
+  você passa o mouse sobre eles. Relidos uma vez por dia, ou logo depois de
+  você abrir ou salvar a página de uma pena ou desmembramento daquele
+  processo — para a fração alterada aparecer nova;
 - na aba Processos Criminais, **abre a árvore de penas** e recolhe as que não
   estão ativas, usando as funções de abrir e fechar da própria página. É só
   exibição: nada é alterado, e você pode abrir ou fechar qualquer ramo à mão
@@ -293,6 +300,8 @@ máquina:
 | CPF, RJI e data de nascimento já vistos, por processo | Evitar nova visita à ficha da parte |
 | Resultado da última leitura da ficha da parte, por processo — quando foi e o que aconteceu (lida, demorou, não abriu) | Não repetir cedo demais uma leitura que falhou, e explicar a falha; não contém dado da parte |
 | Número de cada processo criminal e se a guia é provisória ou definitiva, com a data da leitura | Mostrar na aba Processos Criminais sem abrir a página de cada processo a cada vez |
+| Observações de cada pena ativa e frações de cada desmembramento lido, pelo rótulo do nó na árvore (processo, processo criminal, pena), com a data da leitura | Mostrar na aba Processos Criminais — as Observações abaixo da pena, as frações ao passar o mouse — sem abrir a página de cada pena a cada vez |
+| Número do processo e o horário em que uma página de pena ou desmembramento dele foi aberta ou salva (só dos últimos dois dias) | Saber que as frações e Observações guardadas daquele processo podem ter mudado, e relê-las |
 | Quantos outros processos de Execução da Pena o apenado tem, por processo, com a data da leitura | Realçar a aba Outros Processos do Apenado sem abri-la a cada visita |
 | Nome do juiz da execução, por processo, com a data da leitura | Mostrá-lo ao lado do Juízo em todas as abas do processo — ele só aparece na aba Informações Gerais |
 | Identificador interno da pessoa no BNMP | Abrir a ficha direto, sem passar pela busca |
