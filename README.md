@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 20 de outubro de 2026 · versão 1.5.8*
+*Última atualização: 22 de outubro de 2026 · versão 1.5.9*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -20,10 +20,17 @@ conteúdo daquela página para montar o que mostra: número do processo, nome da
 parte, CPF, RJI, data de nascimento, regime de cumprimento, livramento
 condicional e a data em que foi deferido, datas do cálculo da pena — inclusive
 as duas data-base, a da progressão e a do livramento, e o detalhe de cada
-cálculo: as frações da progressão com a data em que cada uma é alcançada, e a
-conta do livramento —, previsão de prescrição das guias, penas e a situação de
+cálculo: as frações da progressão com a data em que cada uma é alcançada, a
+conta do livramento, e o que desloca o término (remição, com os dias perdidos,
+interrupção e cômputo diferenciado) —, previsão de prescrição das guias, penas e a situação de
 cada uma, quem representa a parte, pendências de análise de juntada, situação
 de peças no BNMP e local de prisão no SIPE.
+
+Parando o mouse num documento dos autos, ela mostra uma **prévia**: uma caixa
+com uma moldura que abre o próprio endereço do documento no SEEU, com a sua
+sessão — como o clique no link faria. A extensão não baixa, não lê e não
+guarda o documento; fechada a caixa, ele não fica em lugar nenhum além do
+cache comum do navegador.
 
 Na ficha de uma pessoa no BNMP, ela lê também o CPF exibido ali, para conferir
 se a ficha aberta é mesmo a da parte daquele processo — ver "o que ela faz por
@@ -106,6 +113,11 @@ Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
   estão ativas, usando as funções de abrir e fechar da própria página. É só
   exibição: nada é alterado, e você pode abrir ou fechar qualquer ramo à mão
   depois;
+- nas abas Movimentações e Incidentes, **quando você digita no Filtrar**,
+  ela abre e fecha de volta, em segundo plano, os "+" da lista que ainda não
+  foram abertos — com as funções da própria página, como o seu clique —,
+  para o filtro procurar também nos documentos e detalhes. Uma vez por
+  página; o conteúdo fica só na tela, e nada é guardado;
 - ao entrar em Informações Adicionais, **revela o quadro do cálculo do
   requisito temporal**, que a aba entrega recolhido. Uma vez por visita, e
   também só exibição: recolhendo-o de novo, ele fica recolhido;
@@ -257,10 +269,9 @@ nada. O recurso
 pode ser desligado no ícone da extensão.
 
 A sétima é o **banco de lembretes**. O "Novo Lembrete" dos autos abre, por
-cima deles, os modelos de lembrete que VOCÊ cadastrou ou importou — ou, com
-a extensão AZflow instalada e cuidando desse botão, um botão próprio, "Banco
-de lembretes", ao lado dele. Quando
-você clica num modelo, a extensão abre a tela do Novo Lembrete do SEEU
+cima deles, os modelos de lembrete que VOCÊ cadastrou ou importou (com o
+recurso desligado, o botão fica com o SEEU ou com outra extensão que cuide
+dele). Quando você clica num modelo, a extensão abre a tela do Novo Lembrete do SEEU
 **numa cópia fora da tela**, preenche a data de ativação, o assunto e o
 texto do modelo — com o número de processo e a sequência da movimentação
 que você preencheu, quando o modelo os pede — e aperta o Salvar
@@ -314,7 +325,7 @@ máquina:
 | Se a consulta automática do Status BNMP está parada, e desde quando | Não insistir numa consulta que abre a página do BNMP |
 | As atribuições (fora as de vara) em que um clique seu trouxe o status do BNMP — só o nome da atribuição, como "distribuidor" | Passar a consultar sozinha nelas |
 | Os modelos do banco de lembretes que você cria ou importa — assunto, texto e em quantos dias o lembrete ativa | Criar lembretes sem sair dos autos (o texto aparece para você conferir antes). Saem desta máquina só no arquivo que você mesmo exportar, para levar a outro computador ou compartilhar |
-| As preferências que você memoriza nos formulários do SEEU — por tela (juntada, dados do cumprimento e da conclusão, audiência, instaurar incidente), com o nome que você der: as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento) e o texto da Descrição do documento; nunca datas nem outro texto livre | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
+| As preferências que você memoriza nos formulários do SEEU — por tela (juntada, dados do cumprimento e da conclusão, audiência, instaurar incidente, Ordenar Cumprimentos, Enviar Concluso, Intimar Partes, Realizar Remessa), com o nome que você der: as escolhas (listas, opções, caixas e campos de busca como Tipo Movimento), o texto da Descrição do documento e os prazos em dias. No Ordenar Cumprimentos, no Intimar Partes e no Realizar Remessa, também os demais textos da tela que você preencheu (como Orientações/Observações) e as partes marcadas — guardadas só pela **posição** na lista (a primeira, a segunda…), nunca pelo nome ou número da parte. Nunca datas | Preencher a tela de novo num clique; nada é salvo nem enviado pela extensão |
 | Lista dos recursos da própria extensão | Montar a tela do ícone; não é dado de processo |
 | Quais gavetas da tela do ícone você deixou abertas | Reabri-las do mesmo jeito; não é dado de processo |
 
