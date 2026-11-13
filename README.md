@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 22 de outubro de 2026 · versão 1.5.9*
+*Última atualização: 13 de novembro de 2026 · versão 1.5.10*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -94,6 +94,14 @@ Estas ações acontecem sem você pedir, e todas dentro dos sistemas oficiais:
   preferência na mesma cópia que lê o regime — para ler o juiz da execução e
   mostrá-lo ao lado do Juízo. Um nome de leitura vencida por essa regra não
   aparece;
+- pela mesma regra, quando o processo está concluso e a capa traz o link
+  "Pré-Analisar Conclusão", **abre fora da tela a pré-análise dessa
+  conclusão** (pelo endereço do próprio link) para ler o agrupador
+  escolhido, e, se a lista não estiver na tela, **a aba Movimentações**
+  para achar a sequência do movimento de conclusão. Mostra os dois ao lado
+  da pendência. Nada é clicado nem salvo na pré-análise; ficam guardados,
+  por processo, só o agrupador, a sequência, o título do movimento e o texto
+  da pendência, por no máximo um dia;
 - pela mesma regra, **abre fora da tela a aba Outros Processos do
   Apenado** para contar quantos deles são de Execução da Pena, e realçar a
   aba quando houver algum. Só a contagem é guardada — nem número nem parte
@@ -146,7 +154,7 @@ Nenhuma dessas ações altera dado nos sistemas.
 
 ## O que ela altera, e só quando você pede
 
-Nove caminhos da extensão terminam em tela de alteração. Todos começam num
+Onze caminhos da extensão terminam em tela de alteração. Todos começam num
 clique seu, e todos param antes da decisão — com duas exceções, ditas abaixo
 com todas as letras.
 
@@ -159,6 +167,18 @@ com todas as letras.
   assinar, ela devolve você à aba em que você estava** quando pediu o RESPE, e
   nada é juntado. Para saber qual dos dois aconteceu, ela anota apenas que
   houve um clique em "Assinar" — não acompanha a assinatura em si;
+- **juntar um relatório das medidas diversas (MDP)**: ao passar o mouse no
+  botão, a extensão lê a aba Medidas Diversas da Prisão numa cópia em segundo
+  plano, só para listar os relatórios que ela oferece. Escolhido um, abre a
+  aba, aciona o "Anexar … à Movimentação" daquele relatório e aperta o botão
+  dele na janela — e **para com o relatório aberto, sem assinar**, como no
+  RESPE, com o mesmo destino ao fechar a janela;
+- **incluir um endereço novo do sentenciado**: a casinha ao lado da data de
+  nascimento abre a ficha da parte numa janela sobre a capa, aperta o
+  "Alterar" do endereço e o "Novo Endereço" — e **para no cadastro em
+  branco**. Preencher e salvar são com você; depois do seu Salvar, a
+  extensão seleciona o endereço novo como o atual — é a oitava exceção,
+  logo abaixo;
 - **redistribuir**: abre a redistribuição, dispensa sozinha o arquivo da tela
   do relatório — que não tem arquivo nenhum a juntar — e **para na tela das
   opções**, em branco. Comarca, competência, tipo e motivo são escolha sua, e
@@ -199,10 +219,11 @@ com todas as letras.
   única vez em que ela mesma habilita é depois de você remover o último
   advogado — é a segunda exceção, logo abaixo.
 
-**As exceções são sete: duas habilitam representação, a terceira troca o
+**As exceções são oito: duas habilitam representação, a terceira troca o
 assunto principal, a quarta salva o processo sem mudar nada, a quinta leva
-um documento até a assinatura, a sexta finaliza a conclusão retornada e a
-sétima cria ou adia um lembrete.**
+um documento até a assinatura, a sexta finaliza a conclusão retornada, a
+sétima cria ou adia um lembrete e a oitava seleciona como atual o endereço
+que você acabou de cadastrar.**
 
 A primeira é a **habilitação de advogado**. Depois que VOCÊ escolhe o advogado
 na tela "Seleção de Advogado", a extensão marca a caixa do executado e
@@ -255,8 +276,24 @@ juntada sem o Tipo Movimento escolhido, ela para antes do "Assinar". Na
 minuta, o botão se chama **Salvar e concluir** e o caminho termina no
 "Concluir" — quem assina é o magistrado, e ali ela nunca aperta "Assinar".
 Para saber se o editor veio de uma minuta, ela anota, no clique em "Digitar
-Texto", só isso: minuta ou não. O recurso pode ser desligado no ícone da
-extensão.
+Texto", só isso: minuta ou não. Ao lado dele há o **Continuar e salvar**,
+que faz só os dois primeiros passos — "Continuar" e o "Salvar" da prévia — e
+para na tela de origem, com o documento salvo: não conclui nem assina.
+Depois do "Assinar" pedido pelo Salvar e assinar, quando os autos voltam à
+tela a extensão abre a aba Movimentações (e, numa tela de saída do mesmo
+processo, aperta o "Voltar para o Processo", segue o link do número do
+processo ou, sem nenhum dos dois, aperta o "Voltar" — para chegar a eles); clicando em "Voltar" ou
+"Cancelar" na tela do Assinar, ela não faz isso. Para quem anexa um arquivo
+em vez de digitar, o mesmo recurso põe o botão **Concluir e assinar** na
+tela da expedição, ao lado do "Concluir". Quando VOCÊ o aperta,
+ela aperta o "Enviar" (só se houver um arquivo que você escolheu e ainda não
+enviou), o "Concluir" (quando a tela o tem) e o "Assinar", com as mesmas
+contenções: a janela do código é sua, a recusa do SEEU para o caminho, e ele
+não existe na juntada, na minuta nem na carta precatória. E a preferência memorizada que
+termina em "Escolher arquivos" abre a janela de arquivos do sistema; o
+arquivo quem escolhe é você, e, escolhido, ela aperta o "Enviar" da tela —
+cancelando a janela, nada é enviado. O recurso pode ser desligado no ícone
+da extensão.
 
 A sexta é o botão **Finalizar Conclusão**, ao lado da pendência "Analisar
 Conclusão Retornada". Quando VOCÊ o aperta, a extensão abre aquela
@@ -289,6 +326,20 @@ Salvar — o texto vai como o SEEU o mandou. Antes, confere pelo campo
 "Processo" da tela que o lembrete é deste processo; depois, que o SEEU gravou
 o que você escolheu, e só então recarrega a tela.
 
+A oitava é o **endereço novo do sentenciado**, pela casinha ao lado da data
+de nascimento. A janela abre no cadastro em branco; **quem preenche e salva
+é você** — a extensão não escreve campo nenhum. Depois que VOCÊ salva, ela
+lê na tela de "Endereço cadastrado com sucesso" o logradouro e o CEP que
+você gravou, volta à lista de endereços da parte, **marca aquele endereço e
+aperta Confirmar Seleção** — o que o torna o endereço atual —, e fecha a
+janela. É o passo que se faria à mão logo depois, sempre igual. Antes, confere
+que a janela é deste processo; não achando o endereço na lista, não marca
+nada e diz o que falta. Desfaz-se na mesma lista, selecionando outro
+endereço. Fechada a janela sem salvar, nada fica armado. Passando o mouse na
+casinha, ela lê a ficha numa cópia em segundo plano só para **mostrar o
+endereço atual** — nada é guardado além da página aberta. O recurso pode ser
+desligado no ícone da extensão.
+
 O menu **Ordenar Cumprimentos**, na barra dos autos, não é exceção: ele
 abre o Ordenar Cumprimentos do SEEU com o tipo que você escolheu já no
 seletor e "Necessita Retorno" marcado "Não" — só quando nenhuma das duas
@@ -315,7 +366,8 @@ máquina:
 | Número do processo e o horário em que uma página de pena ou desmembramento dele foi aberta ou salva (só dos últimos dois dias) | Saber que as frações e Observações guardadas daquele processo podem ter mudado, e relê-las |
 | Quantos outros processos de Execução da Pena o apenado tem, por processo, com a data da leitura | Realçar a aba Outros Processos do Apenado sem abri-la a cada visita |
 | Nome do juiz da execução, por processo, com a data da leitura | Mostrá-lo ao lado do Juízo em todas as abas do processo — ele só aparece na aba Informações Gerais |
-| Identificador interno da pessoa no BNMP | Abrir a ficha direto, sem passar pela busca |
+| Agrupador da conclusão, sequência e título do movimento de conclusão e o texto da pendência, por processo, com a data da leitura (só do último dia) | Mostrá-los ao lado da pendência "Conclusão" sem reabrir a pré-análise a cada troca de aba |
+| Identificador interno da pessoa no BNMP (apagado pela borracha ao lado de "Ficha no BNMP") | Abrir a ficha direto, sem passar pela busca |
 | Local de prisão lido no SIPE, com a data da leitura e como foi identificado (CPF, RJI ou escolha sua, pelo botão "É esta pessoa") | Mostrar na capa sem consultar de novo |
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
 | Os seis últimos passos da busca da ficha no BNMP — hora, tela e o que aconteceu (filtrou, achou a pessoa, abriu a ficha, conferiu) | A janela do BNMP não tem o ícone da extensão; é assim que o Diagnóstico, tirado no SEEU, sabe onde a busca parou. Não contém CPF, nome nem outro dado da pessoa |
@@ -352,7 +404,13 @@ a ficha do BNMP a abrir depois do login; o tipo de perfil reconhecido no cabeça
 Processo, com a aba de onde se saiu e se o CPF já foi confirmado — para voltar
 aos autos depois.
 
-**Onde você estava** — os processos cujas informações já foram mostradas
+**Onde você estava** — os campos que identificam o processo aberto (os do
+formulário dos próprios autos, com o número dele) e o nome da aba
+Movimentações, guardados a cada passagem pelos autos para que a volta
+depois do "Salvar e assinar" os abra direto nessa aba, numa carga só; a
+marca dessa volta (o número do processo e quantos passos já deu), posta no
+clique em "Assinar" e apagada na chegada, na desistência ou em dez minutos;
+os processos cujas informações já foram mostradas
 nesta visita (para não escondê-las de novo a cada troca de aba); o número do
 processo aberto nesta aba e desde quando, a hora do último clique que
 gravou algo e a do último que pode ter mudado o juiz (sem o que foi gravado)
