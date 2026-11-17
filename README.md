@@ -1,6 +1,6 @@
 # Política de Privacidade — SEEU+
 
-*Última atualização: 13 de novembro de 2026 · versão 1.5.10*
+*Última atualização: 17 de novembro de 2026 · versão 1.5.11*
 
 O SEEU+ é uma extensão de navegador que acrescenta atalhos e leituras
 automáticas sobre sistemas que você já acessa com o seu próprio login: SEEU,
@@ -219,11 +219,14 @@ com todas as letras.
   única vez em que ela mesma habilita é depois de você remover o último
   advogado — é a segunda exceção, logo abaixo.
 
-**As exceções são oito: duas habilitam representação, a terceira troca o
+**As exceções são doze: duas habilitam representação, a terceira troca o
 assunto principal, a quarta salva o processo sem mudar nada, a quinta leva
 um documento até a assinatura, a sexta finaliza a conclusão retornada, a
-sétima cria ou adia um lembrete e a oitava seleciona como atual o endereço
-que você acabou de cadastrar.**
+sétima cria ou adia um lembrete, a oitava seleciona como atual o endereço
+que você acabou de cadastrar, a nona salva a Observação do processo que
+você escreveu, a décima troca o juiz da execução, a décima primeira inclui
+ou remove um assunto secundário e a décima segunda troca o nível de sigilo
+do processo.**
 
 A primeira é a **habilitação de advogado**. Depois que VOCÊ escolhe o advogado
 na tela "Seleção de Advogado", a extensão marca a caixa do executado e
@@ -340,6 +343,53 @@ casinha, ela lê a ficha numa cópia em segundo plano só para **mostrar o
 endereço atual** — nada é guardado além da página aberta. O recurso pode ser
 desligado no ícone da extensão.
 
+A nona é a **Observação do processo**. A extensão mostra, numa linha logo
+abaixo do Sumário da Pena e em todas as abas, a Observação que está em Informações Gerais —
+lida da tela ou, fora dessa aba, na mesma leitura em segundo plano que traz o
+juiz da execução. O lápis ao lado abre um painel: para trazer o texto como
+está gravado, ela abre a Alteração do Processo **numa cópia fora da tela** e
+lê o campo Observação. Só quando VOCÊ aperta "Salvar" no painel ela abre a
+Alteração de novo, troca **apenas esse campo** pelo que você escreveu e
+envia o formulário do próprio SEEU, com os demais campos exatamente como o
+servidor os mandou. **É gravação feita fora da tela** — e por isso ela
+confere, na página que o SEEU devolve, o texto que ficou, e avisa se não
+conseguir conferir ou se ficou diferente. Fechando o painel ou cancelando,
+nada é gravado. Desfaz-se do mesmo jeito, salvando o texto anterior. O
+recurso pode ser desligado no ícone da extensão.
+
+A décima é a **troca do juiz da execução**. Clicando no nome do juiz, no
+cabeçalho, abre-se um painel com a lista de juízes que a Alteração do
+Processo oferece — lida **numa cópia fora da tela**. Quando VOCÊ escolhe um,
+a extensão troca **apenas esse campo** e envia o formulário do próprio SEEU,
+com os demais campos como o servidor os mandou; confere na página devolvida
+o juiz que ficou e só então muda o cabeçalho. Desfaz-se escolhendo o juiz
+anterior. O recurso pode ser desligado no ícone da extensão.
+
+A décima primeira são os **assuntos secundários**. Ao lado de cada um há uma
+lixeira e, no fim da lista (ou, sem nenhum, no fim da linha do assunto
+principal), "+ incluir". A lixeira pergunta na própria linha; quando VOCÊ
+responde "Sim", a extensão abre a Alteração do Processo **numa cópia fora da
+tela**, marca aquele assunto, faz o "Remover" e o "Salvar" do próprio SEEU e
+confere nos autos devolvidos que ele saiu. O "+ incluir" abre um painel de
+pesquisa: o termo que VOCÊ digita é pesquisado na Pesquisa de Assuntos do
+SEEU, na mesma cópia; escolhido um resultado, ela faz o "Adicionar" do SEEU
+(a escolha na pesquisa e a volta à Alteração) e o "Salvar", e confere nos
+autos que ele entrou. **É gravação feita fora da tela.** Desfaz-se pelo
+caminho oposto. O recurso pode ser desligado no ícone da extensão.
+
+A décima segunda é o **nível de sigilo do processo**. O lápis ao lado do
+"Nível de Sigilo" abre um painel com os níveis que a tela de sigilo do SEEU
+oferece — lida **numa cópia fora da tela**. Quando VOCÊ escolhe um nível
+MAIOR, a extensão troca **apenas esse campo** e envia o formulário do
+próprio SEEU sem replicar o sigilo para os documentos, como o SEEU faz.
+Quando VOCÊ escolhe um nível MENOR, o painel mostra antes a pergunta do
+próprio SEEU — aplicar o nível apenas aos autos (a resposta recomendada)
+ou replicá-lo também para os documentos dos autos — e só grava depois da
+sua resposta. Nos dois casos confere, na página devolvida, o nível que
+ficou, e só então muda a capa. **É gravação feita fora da tela.** Nada é
+guardado. Desfaz-se escolhendo o nível anterior. O recurso pode ser
+desligado no ícone da extensão.
+
 O menu **Ordenar Cumprimentos**, na barra dos autos, não é exceção: ele
 abre o Ordenar Cumprimentos do SEEU com o tipo que você escolheu já no
 seletor e "Necessita Retorno" marcado "Não" — só quando nenhuma das duas
@@ -367,6 +417,7 @@ máquina:
 | Quantos outros processos de Execução da Pena o apenado tem, por processo, com a data da leitura | Realçar a aba Outros Processos do Apenado sem abri-la a cada visita |
 | Nome do juiz da execução, por processo, com a data da leitura | Mostrá-lo ao lado do Juízo em todas as abas do processo — ele só aparece na aba Informações Gerais |
 | Agrupador da conclusão, sequência e título do movimento de conclusão e o texto da pendência, por processo, com a data da leitura (só do último dia) | Mostrá-los ao lado da pendência "Conclusão" sem reabrir a pré-análise a cada troca de aba |
+| Texto da Observação do processo (o de Informações Gerais), por processo, com a data da leitura (só do último dia) | Mostrá-lo no cabeçalho em todas as abas — ele só aparece na aba Informações Gerais |
 | Identificador interno da pessoa no BNMP (apagado pela borracha ao lado de "Ficha no BNMP") | Abrir a ficha direto, sem passar pela busca |
 | Local de prisão lido no SIPE, com a data da leitura e como foi identificado (CPF, RJI ou escolha sua, pelo botão "É esta pessoa") | Mostrar na capa sem consultar de novo |
 | Consulta pendente ao BNMP (processo, CPF ou RJI, e o nome da parte) | Levar a busca até a janela do BNMP e conferir, na ficha aberta, se é a pessoa certa; apagada assim que usada. O nome só aparece na mensagem que avisa quando a ficha é de outra pessoa |
